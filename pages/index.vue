@@ -72,17 +72,16 @@ html, body {
 }
 
 /* Header as a flex container */
-.header, .footer {
+.header {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     margin: 31px;
     padding: 10px;
     border: 3px solid #4b4b4b8C;
     border-radius: 32px;
     background-color: #49494980;
     filter: drop-shadow(10px 10px 11px #000000);
-    text-align: center;
 }
 
 .header .text {
