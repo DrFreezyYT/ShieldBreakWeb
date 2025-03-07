@@ -4,6 +4,12 @@ useHead({
         { rel: "stylesheet", href: "https://gfont.minipandi.net/fonts/jetbrainsmono/style.css" }
     ]
 });
+
+import { onMounted } from 'vue';
+
+onMounted(() => {
+    document.getElementById("current-year").textContent = new Date().getFullYear();
+});
 </script>
 
 <template>
@@ -30,12 +36,6 @@ useHead({
         </div>
     </div>
 </template>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    document.getElementById("current-year").textContent = new Date().getFullYear();
-});
-</script>
 
 <style>
 * {
