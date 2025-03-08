@@ -16,6 +16,17 @@ import FooterComponent from '@/components/all/FooterComponent.vue';
 useHead({
   link: [
       { rel: 'stylesheet', href: 'https://gfont.minipandi.net/fonts/jetbrainsmono/style.css' }
+  ],
+  meta: [
+    { name: 'og:title', content: 'Shield-Break.net' },
+    { name: 'og:type', content: 'website' },
+    { name: 'og:description', content: 'Shield-Break.net Web' },
+    { property: 'og:image', content: '/assets/icons/favicon.ico' },
+    { name: 'theme-color', content: '#000000' }
+  ],
+  title: 'Shield-Break.net | Dev',
+  link: [
+    { rel: 'icon', type: 'image/x-icon', href: '/assets/icons/favicon.ico' }
   ]
 });
 </script>

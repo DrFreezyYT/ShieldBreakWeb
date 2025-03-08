@@ -65,6 +65,11 @@ const teamSections = ref([
         uuid: '632d0cdd-b2ad-4555-9d1e-dd10bbc249d3',
         displayName: 'Minemaster',
         role: 'Developer'
+      },
+      {
+        uuid: 'dbd29d6d-598d-4e1e-b733-cbf8321820da',
+        displayName: 'EmrageGHC',
+        role: 'Developer'
       }
     ]
   },
