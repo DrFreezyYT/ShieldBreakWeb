@@ -17,8 +17,5 @@ RUN bun install && bun add consola && bun run build && bun run generate
 # Expose the application port
 EXPOSE 3000
 
-# Set environment to production
-ENV NODE_ENV=production
-
 # Run the Nuxt app
 CMD ["bunx", "serve", ".output/public"]

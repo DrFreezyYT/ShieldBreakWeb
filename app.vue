@@ -1,8 +1,10 @@
 <template>
   <div class="app">
-    <HeaderComponent />
-    <NuxtPage />
-    <FooterComponent />
+    <div class="bg">
+      <HeaderComponent />
+      <NuxtPage />
+      <FooterComponent />
+    </div>
   </div>
 </template>
 
@@ -25,17 +27,33 @@ useHead({
 
 html,
 body {
-  background-image: url("/assets/lobby.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
   height: 100vh;
   width: 100vw;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
+}
+
+.bg {
+  position: relative;
+  min-height: 100vh;
+}
+
+.bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/assets/lobby.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  filter: blur(3px);
+  z-index: -1;
 }
 
 .app {

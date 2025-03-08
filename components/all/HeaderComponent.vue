@@ -7,6 +7,7 @@
       <div class="right">
         <button @click="navigateTo('/')"><b>HOME</b></button>
         <button @click="navigateTo('/team')"><b>TEAM</b></button>
+        <button @click="navigateTo('/gamemodes')"><b>MODES</b></button>
         <button @click="navigateTo('https://discord.gg/vpvJdQmuRc')" class="discord-button">
           <img src="/icons/discord.svg" class="button-icon" />
         </button>

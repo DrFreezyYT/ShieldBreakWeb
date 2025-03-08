@@ -120,7 +120,7 @@ const getRoleStyle = (role) => {
 .content {
   flex: 1;
   display: flex;
-  margin: 50px;
+  margin: 20px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -155,7 +155,7 @@ const getRoleStyle = (role) => {
 }
 
 .member-head {
-  flex-shrink: 0;
+  flex-shrink: 0;  
 }
 
 
@@ -165,7 +165,7 @@ const getRoleStyle = (role) => {
   align-items: center;
   background-color: #49494980;
   border: 3px solid #4b4b4b8C;
-  border-radius: 32px;
+  border-radius: 12px;
   padding: 20px;
   gap: 20px;
 }
