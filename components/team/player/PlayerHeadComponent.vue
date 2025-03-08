@@ -1,6 +1,6 @@
 <template>
     <div class="member-head">
-        <img :src="imageUrl" :alt="name" class="member-avatar" />
+        <img :src="imageUrl" alt="HEAD" class="member-avatar" />
     </div>
 </template>
 
@@ -8,7 +8,7 @@
 import { ref, onMounted } from 'vue';
 
 const props = defineProps({
-  name: {
+  uuid: {
     type: String,
     required: true
   },
@@ -26,7 +26,7 @@ const imageUrl = ref('/assets/player.png'); // Fallback-Bild
 
 async function getPlayerHead() {
   try {
-    imageUrl.value = `https://api.freezy.me/v1/head/getHead?name=${props.name}&width=${props.width}&height=${props.height}`;
+    imageUrl.value = `https://api.freezy.me/v1/head/getHead?uuid=${props.uuid}&width=${props.width}&height=${props.height}`;
   } catch (error) {
     console.error('Error fetching player head:', error);
   }
@@ -43,14 +43,11 @@ onMounted(() => {
   justify-content: center;
   align-items: center;
   padding: 10px;
-  border: 3px solid #4b4b4b8C;
-  background-color: #49494980;
-  border-radius: 12px;
 }
 
 .member-avatar {
   width: 64px;
   height: 64px;
-  border-radius: 12px
+  border-radius: 6px
 }
 </style>

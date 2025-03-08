@@ -19,7 +19,8 @@ useHead({
                 <PingDisplayComponent />
             </div>
             <div class="grid-item">
-                <PingDisplayComponent />
+                <iframe src="https://map.massivecraft.com/" width="500" height="500"
+                    allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
             </div>
             <div class="grid-item">
                 <h1>This is a work in progress site for the Minecraft server Shield-Break.net! The site is made and
@@ -38,7 +39,6 @@ useHead({
     align-items: center;
     justify-content: center;
     color: white;
-    text-shadow: 2px 2px 4px #000000;
 }
 
 .content-grid {

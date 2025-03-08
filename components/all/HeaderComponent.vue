@@ -7,7 +7,7 @@
       <div class="right">
         <button @click="navigateTo('/')"><b>HOME</b></button>
         <button @click="navigateTo('/team')"><b>TEAM</b></button>
-        <button @click="navigateTo('https://discord.gg/example')" class="discord-button">
+        <button @click="navigateTo('https://discord.gg/vpvJdQmuRc')" class="discord-button">
           <img src="/icons/discord.svg" class="button-icon" />
         </button>
       </div>
@@ -38,7 +38,7 @@
     border: 3px solid #4b4b4b8C;
     border-radius: 32px;
     background-color: #49494980;
-    filter: drop-shadow(10px 10px 11px #000000);
+    filter: drop-shadow(10px 10px 11px #00000062);
   }
   .left {
     display: flex;
@@ -70,7 +70,7 @@
     padding: 12px 24px;
     margin: 5px;
     border-radius: 32px;
-    filter: drop-shadow(8px 8px 11px #000000);
+    filter: drop-shadow(8px 8px 11px #0000008f);
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
   }
