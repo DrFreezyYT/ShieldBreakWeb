@@ -1,35 +1,32 @@
-# Use the official Bun image for optimized performance
-FROM oven/bun:latest as build
+# Use Node.js for better compatibility with Nuxt
+FROM node:20-alpine AS builder
 
-# Set the working directory
+# Set working directory
 WORKDIR /app
 
-# Copy package.json and bun.lockb before installing dependencies
-COPY package.json bun.lockb ./
+# Copy only necessary files, excluding node_modules and bun.lockb
+COPY package*.json ./
+COPY .gitignore ./
+COPY .nuxt ./.nuxt
+COPY app.vue ./
+COPY nuxt.config.ts ./
+COPY tsconfig*.json ./
+COPY components ./components
+COPY pages ./pages
+COPY public ./public
+COPY server ./server
 
-# Install dependencies using Bun
-RUN bun install
+# Install dependencies
+RUN npm install && npm run build && npm run generate
 
-# Copy the rest of the application
-COPY . .
+# Use a smaller base image for production
+FROM nginx:alpine
 
-# Build the Nuxt app
-RUN bunx nuxt build
+# Copy the built static files from builder stage
+COPY --from=builder /app/.output/public /usr/share/nginx/html
 
-# Use a minimal runtime image
-FROM node:21-alpine
+# Expose port
+EXPOSE 80
 
-# Set working directory in the new container
-WORKDIR /app
-
-# Copy built files from the build stage
-COPY --from=build /app .
-
-# Expose the application port
-EXPOSE 3000
-
-# Set environment to production
-ENV NODE_ENV=production
-
-# Run the Nuxt app
-CMD ["bun", "run", "start"]
+# Use nginx to serve static files
+CMD ["nginx", "-g", "daemon off;"]
